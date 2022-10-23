@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="main-heading">ToDo App</h1>
+        <!-- Form -->
+        <form action="/Add-todo-list" method="post">
+            <div class="description-container">
+                <p>DESCRIPTION</p>
+                <input type="text" id="description" name="description" placeholder="What do you need to do?">
+            </div>
+            <div class="combo-input">
+                <div class="category">
+                    <p>CATEGORY</p>
+                    <select name="category" id="category">
+                        <option value="Home">Select a category</option>
+                        <option value="Home">Home</option>
+                        <option value="Work">Work</option>
+                        <option value="Cultural">Curltural</option>
+                        <option value="Self">Self</option>
+                    </select>
+                </div>
+                <div class="due-date">
+                    <p>DUE DATE</p>
+                    <input type="date" name="dueDate" id="due-date">
+                </div>
+            </div>
+            <!-- Button container -->
+            <div class="button-container">
+                <button type="submit" class="add-task"><i class="fa-solid fa-plus"></i>&nbsp; Add Task</button>
+        </form>
+        <form action="/delete-task" method="post">
+                <button type="submit" class="delete-task"><i class="fa-solid fa-trash-can"></i>&nbsp; DELETE TASKS</button>
+            </div>
+            <!-- Task list container -->
+                <% for(let task of tasks){ %>
+                    <div class="task-list-container" id="<%= task.id %>">
+                        <input name="taskId" type="checkbox" value="<%= task.id %>">
+                        <div class="task-description">
+                            <p><%= task.description %></p>
+                            <p><i class="fa-solid fa-calendar-days"></i>&nbsp;<%= (new Date(task.date)).toDateString() %></p>
+                        </div>
+                        <div class="task-type <%= task.category %>">
+                            <span><%= task.category %></span>
+                        </div>
+                    </div>
+                <% } %>
+        </form>
+    </div>
+    <script src="/js/home.js"></script>
+</body>
+</html>

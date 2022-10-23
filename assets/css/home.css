@@ -1,0 +1,191 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --text-color: #4a4a4a;
+    --border-color: #d2d2d2;
+}
+
+body
+{
+    background-color: lightgray;
+}
+
+.main-container
+{
+    width: 680px;
+    background-color: #FFF;
+    margin: auto;
+}
+
+.main-heading
+{
+    text-align: center;
+    padding-top: 25px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.description-container
+{
+    padding: 10px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.description-container input
+{
+    border: none;
+}
+
+.description-container input:focus
+{
+    outline: none;
+}
+
+.combo-input
+{
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    display: flex;
+}
+
+.combo-input #category, .due-date input
+{
+    border: none;
+    width: 250px;
+    height: 20px;
+}
+
+.category
+{
+    width: calc(50% - 1px);
+    border-right: 1px solid var(--border-color);
+}
+
+.category, .due-date
+{
+    padding: 10px;
+}
+
+.button-container
+{
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.add-task {
+    width: 148px;
+    font-size: 20px;
+    height: 32px;
+    color: white;
+    background-color: #444444;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-task:hover
+{
+    background-color: #333;
+}
+
+.delete-task {
+    background-color: rgb(255, 0, 0);
+    font-size: 20px;
+    width: fit-content;
+    height: 32px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-task:hover{
+    background-color: rgb(182, 0, 0);
+}
+
+.task-list-container
+{
+    display: flex;
+    margin: 10px;
+}
+
+.task-list-container:not(:last-child)
+{
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-list-container
+{
+    padding-bottom: 10px;
+}
+
+.task-list-container input
+{
+    width: 16px;
+}
+
+.task-type
+{
+    margin-left: auto;
+    color: white;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-type.Home
+{
+    background-color: blue;
+}
+
+.task-type.Work
+{
+    background-color: #444444;
+}
+
+.task-type.Cultural
+{
+    background-color: brown;
+}
+
+.task-type.Self
+{
+    background-color: green;
+}
+
+.task-type.School
+{
+    background-color: darkslategrey;
+}
+
+.task-description
+{
+    color: var(--text-color);
+}
+
+.task-description p
+{
+    padding-left: 8px;
+}
+
+.task-description p:nth-child(2)
+{
+    color: #4a4a4a;
+}
+
+.task-completed
+{
+    text-decoration: line-through;
+}
